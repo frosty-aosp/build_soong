@@ -252,10 +252,10 @@ def generate_build_info(args):
   print(f"ro.build.flavor={config['BuildFlavor']}")
 
   print(f"ro.lineage.device={config['LineageDevice']}")
-  print(f"ro.aicp.device={config['LineageDevice']}")
+  print(f"ro.frosty.device={config['LineageDevice']}")
 
   if  config["DEVICE_MAINTAINERS"] != 0:
-    print(f"ro.aicp.maintainer={config['DEVICE_MAINTAINERS']}")
+    print(f"ro.frosty.maintainer={config['DEVICE_MAINTAINERS']}")
 
   # These values are deprecated, use "ro.product.cpu.abilist"
   # instead (see below).
@@ -371,7 +371,7 @@ def append_additional_system_props(args):
       enable_target_debugging = False
       enable_dalvik_lock_contention_logging = False
     else:
-      # AICP: also set ro.adb.secure for userdebug
+      # Frosty: also set ro.adb.secure for userdebug
       if config["BuildVariant"] == "userdebug":
         props.append("ro.adb.secure=1")
 
@@ -381,7 +381,7 @@ def append_additional_system_props(args):
         enable_target_debugging = False
 
     # Disallow mock locations by default for user builds
-    # AICP: still allow for userdebug
+    # Frosty: still allow for userdebug
     if config["BuildVariant"] == "userdebug":
       props.append("ro.allow.mock.location=1")
     else:

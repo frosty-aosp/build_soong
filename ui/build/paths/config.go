@@ -111,7 +111,7 @@ var Configuration = map[string]PathConfig{
 	"unzip":       Allowed,
 	"zip":         Allowed,
 
-	// AICP specific tools
+	// Frosty specific tools
 	"shuf":           Allowed,
 	"mogrify":        Allowed,
 	"xmllint":        Allowed,
