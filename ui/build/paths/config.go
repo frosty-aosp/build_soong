@@ -116,6 +116,7 @@ var Configuration = map[string]PathConfig{
 	"mogrify":        Allowed,
 	"xmllint":        Allowed,
 	"repo":           Allowed,
+	"jq":           Allowed,
 
 	// Host toolchain is removed. In-tree toolchain should be used instead.
 	// GCC also can't find cc1 with this implementation.
